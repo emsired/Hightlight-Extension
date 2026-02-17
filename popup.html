@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainbow Highlights</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- CỘT TRÁI: DANH SÁCH -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="brand">
+                    <img src="icon.png" alt="Icon" class="logo-img">
+                    <h3>Rainbow</h3>
+                </div>
+                <!-- Toggle nhỏ gọn -->
+                <label class="switch-mini" title="Bật/Tắt trên trang này">
+                    <input type="checkbox" id="site-toggle">
+                    <span class="slider-mini"></span>
+                </label>
+            </div>
+
+            <!-- Bộ lọc màu -->
+            <div class="filter-dots" id="category-filters">
+                <button class="dot active" data-filter="all" title="Tất cả">ALL</button>
+                <button class="dot" data-filter="red" style="background:#ffadad"></button>
+                <button class="dot" data-filter="orange" style="background:#ffd6a5"></button>
+                <button class="dot" data-filter="yellow" style="background:#fdffb6"></button>
+                <button class="dot" data-filter="green" style="background:#caffbf"></button>
+                <button class="dot" data-filter="blue" style="background:#9bf6ff"></button>
+                <button class="dot" data-filter="purple" style="background:#bdb2ff"></button>
+            </div>
+
+            <!-- Danh sách Highlight -->
+            <div id="highlights-list" class="list-container">
+                <!-- Items injected by JS -->
+            </div>
+            
+            <div class="sidebar-footer">
+                <button id="clear-all" class="btn-text-danger">Xóa tất cả</button>
+                <div class="contact-info">
+                    Contact me via Email: ttqn2808@gmail.com
+                </div>
+            </div>
+        </div>
+
+        <!-- CỘT PHẢI: CHI TIẾT & NOTE -->
+        <div class="main-content">
+            <!-- Trạng thái trống -->
+            <div id="empty-state" class="center-msg">
+                <div class="empty-icon">👈</div>
+                <p>Chọn một dòng bên trái để xem và sửa ghi chú.</p>
+            </div>
+
+            <!-- Khu vực chỉnh sửa (Ẩn mặc định) -->
+            <div id="editor-panel" class="editor-panel hidden">
+                <div class="editor-header">
+                    <span id="editor-date" class="meta-date">...</span>
+                    <div class="actions">
+                        <a id="editor-link" href="#" target="_blank" class="icon-btn" title="Mở trang web">🔗</a>
+                        <button id="editor-delete" class="icon-btn danger" title="Xóa">🗑️</button>
+                    </div>
+                </div>
+
+                <div class="quote-box">
+                    <div class="quote-color-strip" id="editor-strip"></div>
+                    <p id="editor-text">...</p>
+                </div>
+
+                <div class="note-area-wrapper">
+                    <label class="section-label">Ghi chú:</label>
+                    <textarea id="editor-note" placeholder="Nhập ghi chú tại đây..."></textarea>
+                </div>
+
+                <div class="editor-footer">
+                    <span id="save-status" class="save-status">Đã lưu</span>
+                    <div class="credits">
+                        Creator: <b>Quỳnh Như</b> | Dev: <b>Emsired</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
